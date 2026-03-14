@@ -103,16 +103,18 @@ const header = document.querySelector(".site-header");
 
 const normalizeStatus = (status) => String(status || "").trim();
 
+const isValidURL = (value) => value && value !== "pending";
+
 const buildProjectLinks = (project) => {
   const links = [];
 
-  if (project.github) {
+  if (isValidURL(project.github)) {
     links.push(`<a class="project-link" href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>`);
   } else {
     links.push('<span class="project-link disabled">GitHub link pending</span>');
   }
 
-  if (project.demo) {
+  if (isValidURL(project.demo)) {
     links.push(`<a class="project-link" href="${project.demo}" target="_blank" rel="noreferrer">Live Demo</a>`);
   } else {
     links.push('<span class="project-link disabled">Demo link pending</span>');
