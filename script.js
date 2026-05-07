@@ -1,5 +1,29 @@
 const projects = [
   {
+    title: "Asynchronous FIFO UVM Verification",
+    period: "May 2026",
+    status: "RTL Verification",
+    description:
+      "Developed an advanced Universal Verification Methodology (UVM) environment for verifying an Asynchronous FIFO design to industry standards.",
+    impact:
+      "Created a robust testbench architecture demonstrating expertise in high-impact hardware verification and advanced simulation techniques for VLSI design.",
+    stack: ["SystemVerilog", "UVM", "ModelSim", "RTL Verification", "Asynchronous FIFO"],
+    github: "https://github.com/Bhavin-umatiya/async-fifo-uvm-verification",
+    demo: null
+  },
+  {
+    title: "AI-VLSI Feasibility Engine",
+    period: "2026",
+    status: "AI + VLSI",
+    description:
+      "Built a Python-based engine that evaluates VLSI design feasibility using AI-driven analysis, bridging the gap between concept-level hardware ideas and implementation-ready specifications.",
+    impact:
+      "Automates early-stage design evaluation to accelerate hardware development decision-making and reduce iteration cycles.",
+    stack: ["Python", "AI/ML", "VLSI Analysis", "Automation"],
+    github: "https://github.com/Bhavin-umatiya/AI-VLSI-Feasibility-Engine",
+    demo: null
+  },
+  {
     title: "Secure Firmware Bootloader - STM32",
     period: "Mar 2026",
     status: "Embedded",
@@ -12,16 +36,16 @@ const projects = [
     demo: "pending"
   },
   {
-    title: "8-bit CPU Implementation",
+    title: "8-bit Pipelined CPU",
     period: "Feb 2026",
     status: "Digital Design",
     description:
-      "Built a simple 8-bit CPU in Verilog with a fetch-decode-execute flow, including a program counter, instruction memory, register file, ALU, and top-level datapath integration.",
+      "Designed and implemented a 5-stage pipelined 8-bit processor in Verilog with hazard detection, data forwarding, and a custom ALU supporting arithmetic and logic operations.",
     impact:
-      "Verified arithmetic and logic instructions including ADD, SUB, AND, and OR through ModelSim simulation and synthesized the design with Intel Quartus.",
-    stack: ["Verilog HDL", "Intel Quartus", "ModelSim", "CPU Datapath"],
-    github: "https://github.com/Bhavin-umatiya/8_bit_cpu_Implementation",
-    demo: "pending"
+      "Achieved pipelined execution with proper stall and forwarding logic, verified through ModelSim simulation and synthesized with Xilinx Vivado.",
+    stack: ["Verilog HDL", "Vivado", "ModelSim", "Pipelined CPU", "Hazard Detection"],
+    github: "https://github.com/Bhavin-umatiya/pipelined-8bit-cpu-verilog",
+    demo: null
   },
   {
     title: "Agentic Hardware Co-Design Platform",
@@ -84,16 +108,16 @@ const projects = [
     demo: "pending"
   },
   {
-    title: "Neuromorphic Computing on FPGA",
+    title: "Neuromorphic SNN Accelerator on FPGA",
     period: "In Progress",
     status: "Current Research",
     description:
-      "Developing a neuromorphic computing project using FPGA-based hardware acceleration for brain-inspired workloads.",
+      "Building a Spiking Neural Network (SNN) hardware accelerator on FPGA using Leaky Integrate-and-Fire (LIF) neuron models for brain-inspired computing.",
     impact:
-      "Focused on architecture design, hardware feasibility, and scalable accelerator implementation strategy for efficient real-time processing.",
-    stack: ["FPGA", "Digital Design", "Neuromorphic Computing", "Verilog"],
-    github: "pending",
-    demo: "pending"
+      "Focused on architecture design, hardware feasibility, and scalable accelerator implementation for efficient real-time neuromorphic processing on Xilinx FPGAs.",
+    stack: ["SystemVerilog", "Xilinx Vivado", "Neuromorphic Computing", "SNN", "FPGA"],
+    github: "https://github.com/Bhavin-umatiya/neuromorphic-snn-accelerator",
+    demo: null
   }
 ];
 
