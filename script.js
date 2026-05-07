@@ -60,16 +60,16 @@ const projects = [
     demo: "pending"
   },
   {
-    title: "Automated Leaf Health Detection",
-    period: "Oct 2025",
-    status: "Computer Vision",
+    title: "Open Source Contributions: Zephyr RTOS & ROS2",
+    period: "2026",
+    status: "Open Source",
     description:
-      "Developed a Python computer vision pipeline to assess crop leaf health using preprocessing, HSV segmentation, and lesion visualization.",
+      "Active contributor to Zephyr RTOS and ROS2 Controllers, focusing on embedded infrastructure, real-time system stability, and hardware-aware optimizations.",
     impact:
-      "Calculated health scores from green-to-diseased ratios and generated overlays for clearer decision support.",
-    stack: ["Python", "OpenCV", "NumPy", "PIL"],
-    github: "pending",
-    demo: "pending"
+      "Successfully merged pull requests addressing CI compliance, parameter deprecation, and system stability, demonstrating strong collaborative engineering in large-scale codebases.",
+    stack: ["C", "C++", "RTOS", "ROS2", "Embedded Systems", "Git Workflow"],
+    github: "https://github.com/zephyrproject-rtos/zephyr",
+    demo: null
   },
   {
     title: "Smart Agriculture System",
@@ -93,18 +93,6 @@ const projects = [
       "Implemented the output display on hardware using a 7-segment interface on the DE2 kit.",
     stack: ["Verilog", "Quartus", "ModelSim", "FPGA DE2"],
     github: "https://github.com/Bhavin-umatiya/Carry-save-FPGA",
-    demo: "pending"
-  },
-  {
-    title: "Parents and Child Performance Analysis",
-    period: "May 2024",
-    status: "Data Analysis",
-    description:
-      "Analyzed how parents' education levels affect student academic performance using structured Python-based analysis.",
-    impact:
-      "Used exploratory analysis and visual storytelling to turn education data into understandable insights.",
-    stack: ["Python", "Pandas", "NumPy", "Seaborn", "Matplotlib"],
-    github: "https://github.com/Bhavin-umatiya/Parents-and-child-performance-analysis",
     demo: "pending"
   },
   {
