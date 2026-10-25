@@ -1,271 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhavin Umatiya | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Bhavin Umatiya, an Electronics and Communication Engineering student focused on embedded systems, FPGA design, VLSI, AI, and data engineering."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#top">
-          <span class="brand-mark">BU</span>
-          <span class="brand-copy">
-            <strong>Bhavin Umatiya</strong>
-            <small>ECE Student | VLSI + FPGA + Computer Architecture</small>
-          </span>
-        </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#stack">Stack</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="header-social" aria-label="Header social links">
-          <a class="icon-btn" href="https://www.linkedin.com/in/bhavin-umatiya/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3C4.17 3 3.3 3.87 3.3 4.95s.87 1.95 1.95 1.95 1.95-.87 1.95-1.95S6.33 3 5.25 3zM20.7 13.42c0-3.39-1.81-4.97-4.22-4.97-1.95 0-2.82 1.07-3.3 1.82V8.5H9.8V20h3.38v-5.69c0-1.5.28-2.95 2.14-2.95 1.83 0 1.86 1.71 1.86 3.05V20h3.38v-6.58z"/>
-            </svg>
-          </a>
-          <a class="icon-btn" href="https://github.com/Bhavin-umatiya" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.08 3.29 9.39 7.86 10.9.58.1.79-.25.79-.56v-2.14c-3.2.69-3.88-1.38-3.88-1.38-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.76 2.72 1.25 3.39.95.11-.75.41-1.25.74-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.27 1.18-3.06-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.17 1.17a10.9 10.9 0 0 1 5.78 0c2.2-1.48 3.17-1.17 3.17-1.17.62 1.59.23 2.77.11 3.06.73.79 1.18 1.81 1.18 3.06 0 4.41-2.69 5.39-5.25 5.67.42.36.8 1.08.8 2.19v3.25c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.66 18.35.5 12 .5z"/>
-            </svg>
-          </a>
-        </div>
-      </header>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bhavin Umatiya — FPGA, RTL & embedded</title>
+<meta name="description" content="Bhavin Umatiya: FPGA/HLS acceleration, RTL design and UVM verification, embedded firmware. Upstream contributor to Zephyr RTOS, ROS 2 and BlackParrot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F4; --ink:#15211D; --ink-2:#4A5753; --teal:#0E4F5C; --teal-2:#0B3F49;
+  --amber:#D99A00; --rule:#C9CFCB; --rule-2:#E4E8E5; --white:#FFFFFF;
+  --max:880px; --gutter:20px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1715; --ink:#EDF1EE; --ink-2:#A9B4AF; --teal:#6FC3D3; --teal-2:#8ED4E2;
+    --amber:#F0B429; --rule:#2B3835; --rule-2:#1D2826; --white:#162220;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .wave *{animation:none!important;stroke-dashoffset:0!important;opacity:1!important} }
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--teal) 35%,transparent)}
+a:hover{border-bottom-color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+header{padding:28px 0 0}
+nav{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:baseline;font-size:15px;font-weight:600}
+nav .name{font-weight:800;font-size:17px;color:var(--ink);border:0;margin-right:auto}
+nav a:not(.name){color:var(--ink-2);border:0}
+nav a:not(.name):hover{color:var(--teal)}
 
-      <main id="top">
-        <section class="hero section-frame">
-          <div class="hero-copy">
-            <p class="eyebrow">Electronics and Communication Engineering | 6th Semester | R&D Hardware Intern at Oizom</p>
-            <p class="hero-slogan">Engineering ideas into real VLSI, embedded, and FPGA systems.</p>
-            <p class="hero-text">
-              I build across RTL verification, FPGA workflows, microcontrollers, computer vision, and data-driven systems.
-              Currently interning at Oizom Instruments as an R&D Hardware Intern while pursuing UVM verification and neuromorphic computing research.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#projects">View Projects</a>
-              <a class="button secondary" href="https://www.linkedin.com/in/bhavin-umatiya/" target="_blank" rel="noreferrer">View LinkedIn</a>
-              <a class="button secondary" href="mailto:umatiyabhavin@gmail.com">Email Me</a>
-            </div>
-            <div class="social-strip" aria-label="Professional links">
-              <a class="chip" href="https://www.linkedin.com/in/bhavin-umatiya/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
-              <a class="chip" href="https://github.com/Bhavin-umatiya" target="_blank" rel="noreferrer">GitHub Profile</a>
-              <a class="chip" href="CV.pdf" download>Download CV</a>
-            </div>
-          </div>
+/* hero */
+.hero{padding-top:64px;padding-bottom:48px;border-bottom:1px solid var(--rule)}
+.hero h1{font-size:clamp(34px,5.6vw,54px);line-height:1.04;font-weight:800;letter-spacing:-0.02em;margin:0 0 18px;max-width:14ch}
+.hero p{font-size:19px;color:var(--ink-2);max-width:56ch;margin:0 0 26px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 18px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid var(--teal);color:var(--teal)}
+.btn.primary{background:var(--teal);color:var(--paper)}
+.btn.primary:hover{background:var(--teal-2);border-color:var(--teal-2)}
+.wave{margin:44px 0 0;width:100%;height:auto;display:block}
+.wave text{font-family:"JetBrains Mono",monospace;font-size:12px;fill:var(--ink-2)}
+.wave .sig{fill:none;stroke-width:2;stroke-linejoin:miter;stroke-linecap:square}
+.wave .clk{stroke:var(--ink-2);stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.6s ease-out forwards}
+.wave .dat{stroke:var(--amber);stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.6s .25s ease-out forwards}
+.wave .grid{stroke:var(--rule);stroke-width:1}
+.wave .mark{opacity:0;animation:fade .5s 1.7s forwards}
+.wave .mark line{stroke:var(--teal);stroke-width:1.5;stroke-dasharray:4 4}
+.wave .mark text{fill:var(--teal);font-weight:500}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
 
-          <aside class="hero-panel">
-            <div class="panel-grid">
-              <article class="panel-card stat">
-                <span>01</span>
-                <strong>FPGA + Verilog</strong>
-                <p>RTL design, simulation, synthesis, automation</p>
-              </article>
-              <article class="panel-card stat">
-                <span>02</span>
-                <strong>Embedded + IoT</strong>
-                <p>8051, STM32, ARM7, sensors, dashboards</p>
-              </article>
-              <article class="panel-card stat">
-                <span>03</span>
-                <strong>RTL Verification</strong>
-                <p>SystemVerilog, UVM, testbenches, coverage</p>
-              </article>
-              <article class="panel-card stat">
-                <span>04</span>
-                <strong>Build Direction</strong>
-                <p>Practical engineering with measurable outputs</p>
-              </article>
-            </div>
-          </aside>
-        </section>
+/* sections */
+section{padding-top:56px;padding-bottom:56px;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+h2{font-size:26px;font-weight:800;letter-spacing:-0.01em;margin:0 0 8px}
+.lede{color:var(--ink-2);margin:0 0 34px;max-width:60ch}
 
-        <section class="about-grid" id="about">
-          <article class="section-frame story-card">
-            <p class="eyebrow">About</p>
-            <h2>Building practical hardware-software systems for real-world impact.</h2>
-            <p>
-              I am Bhavinkumar Umatiya, an Electronics and Communication Engineering student focused on VLSI design, RTL verification, embedded systems, and FPGA design.
-              I enjoy building practical systems that move from idea to implementation, combining UVM verification, RTL design, microcontroller development, and data-driven tools.
-            </p>
-            <p>
-              Currently interning at Oizom Instruments as an R&D Hardware Intern. My recent work includes UVM-based asynchronous FIFO verification, pipelined CPU design, secure bootloader development on STM32, and AI-assisted hardware co-design workflows.
-              I am also exploring neuromorphic SNN accelerator design on FPGA.
-            </p>
-          </article>
+/* projects */
+.project{display:grid;grid-template-columns:1.1fr .9fr;gap:28px 36px;padding:30px 0;border-top:1px solid var(--rule-2)}
+.project:first-of-type{border-top:0;padding-top:0}
+.project h3{font-size:21px;font-weight:700;margin:0 0 4px;line-height:1.25}
+.project .meta{color:var(--ink-2);font-size:15px;margin:0 0 14px}
+.project p{margin:0 0 12px;max-width:52ch}
+.project ul{margin:0 0 14px;padding-left:18px}
+.project li{margin:0 0 6px}
+.project .links{display:flex;flex-wrap:wrap;gap:16px;font-size:15px;font-weight:600}
+.result{font-size:15px;line-height:1.4;margin:0 0 14px}
+.result b{font-size:30px;font-weight:800;letter-spacing:-0.02em;display:block;line-height:1.1;color:var(--teal)}
+.evidence img,.evidence iframe{width:100%;display:block;border-radius:6px;border:1px solid var(--rule-2);background:var(--white)}
+.evidence iframe{aspect-ratio:16/9;height:auto;border:1px solid var(--rule-2)}
+.evidence figcaption{font-size:13px;color:var(--ink-2);margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:0 0 6px}
+th,td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--rule-2);vertical-align:top}
+th{font-weight:700;color:var(--ink-2);font-size:13.5px}
+td.n{font-family:"JetBrains Mono",monospace;white-space:nowrap}
+tr.hl td{font-weight:700;color:var(--teal)}
+tfoot td{border:0;color:var(--ink-2);font-size:13px;padding-top:8px}
 
-          <article class="section-frame focus-card">
-            <p class="eyebrow">Current Focus</p>
-            <div class="focus-list">
-              <div>
-                <h3>Neuromorphic Computing</h3>
-                <p>FPGA hardware acceleration for brain-inspired computing and efficient digital realization.</p>
-              </div>
-              <div>
-                <h3>Digital Hardware</h3>
-                <p>Verilog, FPGA prototyping, simulation flows, CPU design, and architecture-to-implementation thinking.</p>
-              </div>
-              <div>
-                <h3>Embedded Intelligence</h3>
-                <p>Sensor-driven systems, control logic, board-level experimentation, and hardware-aware optimization.</p>
-              </div>
-              <div>
-                <h3>Hardware Verification</h3>
-                <p>UVM testbenches, assertions, coverage-driven verification, and robust functional validation pipelines.</p>
-              </div>
-            </div>
-          </article>
-        </section>
+/* PR list */
+.prs{list-style:none;margin:0;padding:0}
+.prs li{display:grid;grid-template-columns:150px 1fr;gap:6px 22px;padding:14px 0;border-top:1px solid var(--rule-2)}
+.prs li:first-child{border-top:0;padding-top:0}
+.prs .proj{font-weight:700}
+.prs .proj small{display:block;font-weight:500;color:var(--ink-2);font-size:14px}
+.prs .what{margin:0}
+.prs .what a{font-family:"JetBrains Mono",monospace;font-size:14px}
 
-        <section class="section-frame timeline-section">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Timeline</p>
-              <h2>Education, internship, and engineering milestones.</h2>
-            </div>
-            <p class="section-note"></p>
-          </div>
-            
-          <div class="timeline">
-            <article>
-              <span>2024 - Present</span>
-              <h3>B.Tech in Electronics and Communication Engineering</h3>
-              <p>Institute of Technology, Nirma University, Ahmedabad</p>
-            </article>
-            <article>
-              <span>2021 - 2024</span>
-              <h3>Diploma in Information Technology</h3>
-              <p>Dalia Institute of Technology, GTU | First Class with Distinction</p>
-            </article>
-            <article>
-              <span>May 2026 - Present</span>
-              <h3>R&D Hardware Intern, Oizom Instruments Pvt. Ltd.</h3>
-              <p>Working on hardware R&D for environmental monitoring instruments, contributing to product development and testing workflows.</p>
-            </article>
-            <article>
-              <span>Mar 2024 - Jun 2024</span>
-              <h3>Intern, Vision HVAC Pvt. Ltd.</h3>
-              <p>Documented performance test cases and resolved data-processing errors.</p>
-            </article>
-            <article>
-              <span>2025</span>
-              <h3>Smart India Hackathon 2025 - Campus Winner</h3>
-              <p>Smart Agriculture System selected as SIH '25 Campus Winner from 200+ teams.</p>
-            </article>
-            <article>
-              <span>Current Research</span>
-              <h3>Neuromorphic Computing using FPGA</h3>
-              <p>Investigating FPGA-based implementations for brain-inspired computing architectures and efficient digital realization.</p>
-            </article>
-          </div>
-        </section>
+/* timeline */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:150px 1fr;gap:4px 22px;padding:12px 0;border-top:1px solid var(--rule-2)}
+.tl li:first-child{border-top:0;padding-top:0}
+.tl .when{color:var(--ink-2);font-size:15px;padding-top:2px}
+.tl .what b{display:block}
+.tl .what span{color:var(--ink-2)}
 
-        <section class="section-frame projects-section" id="projects">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Featured Work</p>
-              <h2>Projects</h2>
-            </div>
-            <p class="section-note"></p>
-          </div>
-            
-          <div class="projects-grid" id="projects-grid"></div>
-        </section>
+/* skills */
+.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 22px;margin:0}
+.skills dt{font-weight:700}
+.skills dd{margin:0;color:var(--ink);}
 
-        <section class="stack-grid" id="stack">
-          <article class="section-frame skill-card">
-            <p class="eyebrow">Technical Stack</p>
-            <h2>Tools I use to turn concepts into working systems.</h2>
-            <div class="skill-groups">
-              <div>
-                <h3>Languages</h3>
-                <ul>
-                  <li>Python</li>
-                  <li>Verilog</li>
-                  <li>SystemVerilog</li>
-                  <li>Bash / Scripting</li>
-                  <li>Assembly Language</li>
-                  <li>C</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Tools</h3>
-                <ul>
-                  <li>Vivado</li>
-                  <li>Keil</li>
-                  <li>Proteus</li>
-                  <li>MATLAB</li>
-                  <li>ModelSim</li>
-                  <li>UVM Framework</li>
-                  <li>Verible</li>
-                  <li>GitHub</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Platforms</h3>
-                <ul>
-                  <li>8051 Microcontroller</li>
-                  <li>FPGA (DE2)</li>
-                  <li>Xilinx Board</li>
-                  <li>STM32</li>
-                  <li>ARM7 Board</li>
-                  <li>ESP32</li>
-                  <li>GLCD</li>
-                </ul>
-              </div>
-            </div>
-          </article>
+/* contact */
+.contact p{max-width:56ch}
+.contact .row{display:flex;flex-wrap:wrap;gap:14px 28px;font-weight:600;margin-top:18px}
+footer{padding:28px 0 48px;color:var(--ink-2);font-size:14px}
 
-          <article class="section-frame proof-card">
-            <p class="eyebrow">Proof of Work</p>
-            <div class="proof-block">
-              <h3>Certifications & Contributions</h3>
-              <p>Active open-source contributor to Zephyr RTOS & ROS2. Certified in Azure AI Fundamentals and GenAI by Google Cloud.</p>
-            </div>
-            <div class="proof-block">
-              <h3>Achievements</h3>
-              <p>SIH '25 Campus Winner (selected from 200+ teams), runner-up in National Karate Championship, and silver medalist at state and district tournaments.</p>
-            </div>
-            <div class="proof-block">
-              <h3>Working Style</h3>
-              <p>Rigorous verification, architecture-driven design, open-source collaboration, and disciplined execution under constraints.</p>
-            </div>
-          </article>
-        </section>
+@media (max-width:720px){
+  .project{grid-template-columns:1fr}
+  .prs li,.tl li,.skills{grid-template-columns:1fr}
+  .hero{padding-top:44px;padding-bottom:36px;overflow:hidden}
+  .wave{width:760px;max-width:none}
+  .hero h1{max-width:none}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <nav aria-label="Primary">
+    <a class="name" href="#top">Bhavin Umatiya</a>
+    <a href="#work">Work</a>
+    <a href="#upstream">Upstream</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="https://github.com/Bhavin-umatiya">GitHub</a>
+  </nav>
+</header>
 
-        <section class="section-frame contact-section" id="contact">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Open to full-time roles and high-impact engineering collaborations.</h2>
-            <p>
-              Currently an R&D Hardware Intern at Oizom Instruments. I am looking for full-time opportunities in VLSI Design, RTL Verification, Embedded Systems, and FPGA development where I can contribute and keep growing.
-            </p>
-          </div>
-          <div class="contact-links">
-            <a class="button secondary" href="https://www.linkedin.com/in/bhavin-umatiya/" target="_blank" rel="noreferrer">View LinkedIn</a>
-            <a class="button secondary" href="mailto:umatiyabhavin@gmail.com">Email Me</a>
-          </div>
-        </section>
-      </main>
+<main id="top">
+<section class="hero wrap" aria-labelledby="h1">
+  <h1 id="h1">Hardware that ships: FPGA acceleration, RTL and the firmware under it.</h1>
+  <p>I design digital hardware on Xilinx FPGAs, verify it with UVM, and fix the RTOS code that runs on top. Final-year ECE at Nirma University, Ahmedabad; upstream contributor to Zephyr RTOS, ROS 2 and BlackParrot.</p>
+  <div class="cta">
+    <a class="btn primary" href="#work">See the work</a>
+    <a class="btn" href="CV.pdf">Download CV</a>
+  </div>
+
+  <svg class="wave" viewBox="0 0 880 150" role="img" aria-label="Timing diagram: a clock and a data signal, with the measured ZCU104 inference latency of 72.5 milliseconds marked.">
+    <line class="grid" x1="90" y1="20" x2="90" y2="135"/>
+    <line class="grid" x1="90" y1="135" x2="870" y2="135"/>
+    <text x="0" y="48">clk</text>
+    <text x="0" y="104">vit_out</text>
+    <polyline class="sig clk" points="90,60 90,30 130,30 130,60 170,60 170,30 210,30 210,60 250,60 250,30 290,30 290,60 330,60 330,30 370,30 370,60 410,60 410,30 450,30 450,60 490,60 490,30 530,30 530,60 570,60 570,30 610,30 610,60 650,60 650,30 690,30 690,60 730,60 730,30 770,30 770,60 810,60 810,30 850,30 850,60 870,60"/>
+    <polyline class="sig dat" points="90,118 250,118 250,88 490,88 490,118 650,118 650,88 870,88"/>
+    <g class="mark">
+      <line x1="250" y1="76" x2="650" y2="76"/>
+      <line x1="250" y1="70" x2="250" y2="82"/>
+      <line x1="650" y1="70" x2="650" y2="82"/>
+      <text x="450" y="70" text-anchor="middle">72.5 ms measured · ZCU104 · 300 MHz PL</text>
+    </g>
+  </svg>
+</section>
+
+<section id="work" class="wrap" aria-labelledby="h-work">
+  <h2 id="h-work">Work</h2>
+  <p class="lede">Three projects with numbers behind them. Each has a public repo you can build from.</p>
+
+  <article class="project">
+    <div>
+      <h3>Vision Transformer accelerator on Zynq UltraScale+</h3>
+      <p class="meta">Xilinx ZCU104 · Vitis HLS · Vitis AI DPU · AXI · May 2026</p>
+      <p class="result"><b>50.7× faster</b> than the on-board ARM Cortex-A53 baseline, end to end.</p>
+      <p>Softmax, GELU and LayerNorm are the parts of a transformer the DPU can't run well, so they became custom fully pipelined HLS IP on the programmable logic, talking to the processor over AXI. Matrix multiplies stay on the DPU.</p>
+      <ul>
+        <li>Timing closed at 300 MHz with PIPELINE/DATAFLOW pragmas and interface tuning.</li>
+        <li>DeiT-Small inference: 72.5 ms measured on the board vs 3671 ms on the CPU, at ~15 W.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Platform</th><th>Latency</th><th>Power</th></tr></thead>
+        <tbody>
+          <tr><td>ARM Cortex-A53 (ZCU104 PS)</td><td class="n">3671.1 ms</td><td class="n">~15 W</td></tr>
+          <tr class="hl"><td>ZCU104 PS + PL accelerator</td><td class="n">72.5 ms</td><td class="n">~15 W</td></tr>
+          <tr><td>Nvidia T4 (datacenter GPU)</td><td class="n">5.42 ms</td><td class="n">~70 W</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="3">All three measured. The repo also carries an estimated Jetson Nano figure, kept out of this table.</td></tr></tfoot>
+      </table>
+      <p class="links">
+        <a href="https://github.com/Bhavin-umatiya/ZCU104-ViT-Hardware-Accelerator">Repository</a>
+        <a href="https://youtu.be/TwqHAWAqE7g">Demo on the board</a>
+      </p>
     </div>
+    <figure class="evidence">
+      <iframe src="https://www.youtube-nocookie.com/embed/TwqHAWAqE7g" title="ZCU104 ViT accelerator running on hardware" loading="lazy" allow="accelerated-media; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      <figcaption>Bare-metal run on the ZCU104, 72.5 ms per inference.</figcaption>
+    </figure>
+  </article>
 
-    <script src="script.js"></script>
-  </body>
+  <article class="project">
+    <div>
+      <h3>Asynchronous FIFO, verified with UVM</h3>
+      <p class="meta">Verilog RTL · SystemVerilog · UVM 1.2 · SVA · Apr 2026</p>
+      <p class="result"><b>Clock-domain crossing done right</b> and proven with a full testbench, not a directed test.</p>
+      <p>Gray-coded read and write pointers cross domains through two-stage synchronisers, so full and empty flags are safe under any clock ratio. The point of the project was the verification side.</p>
+      <ul>
+        <li>UVM environment: sequencer, driver, monitor on both ports, reference-queue scoreboard.</li>
+        <li>Constrained-random stimulus, SystemVerilog assertions on pointer and flag behaviour, cross coverage of simultaneous read/write.</li>
+        <li>500-transaction random regression plus directed overflow and underflow tests, all passing.</li>
+      </ul>
+      <p class="links">
+        <a href="https://github.com/Bhavin-umatiya/async-fifo-uvm-verification">Repository</a>
+      </p>
+    </div>
+    <figure class="evidence">
+      <img src="https://raw.githubusercontent.com/Bhavin-umatiya/async-fifo-uvm-verification/main/docs/schematic.png" alt="RTL schematic of the asynchronous FIFO showing the two clock domains and Gray-code pointer synchronisers" loading="lazy">
+      <figcaption>Synthesised RTL schematic: two clock domains, Gray-code pointer sync.</figcaption>
+    </figure>
+  </article>
+
+  <article class="project">
+    <div>
+      <h3>Adaptive ROI video pipeline on the edge</h3>
+      <p class="meta">Xilinx ZCU104 · Vitis AI DPU (YOLOv4) · Video Codec Unit · May 2026</p>
+      <p class="result"><b>Detect, prioritise, encode</b> entirely on the device, with no host in the loop.</p>
+      <p>YOLOv4 on the DPU finds what matters in each frame; a three-zone region-of-interest mask steers quality toward it; the hardware VCU encodes H.264 at the output. A surveillance pipeline that works without a server.</p>
+      <p class="links">
+        <a href="https://github.com/Bhavin-umatiya/zcu104-adaptive-video-pipeline">Repository</a>
+      </p>
+    </div>
+    <figure class="evidence">
+      <img src="https://raw.githubusercontent.com/Bhavin-umatiya/ZCU104-ViT-Hardware-Accelerator/main/results/architecture_diagram.png" alt="Block diagram of the ZCU104 processing system, DPU and programmable-logic fabric used across the ZCU104 projects" loading="lazy">
+      <figcaption>Shared PS / DPU / PL architecture used across the ZCU104 projects.</figcaption>
+    </figure>
+  </article>
+</section>
+
+<section id="upstream" class="wrap" aria-labelledby="h-up">
+  <h2 id="h-up">Upstream contributions</h2>
+  <p class="lede">Merged into projects other people depend on. Each line links to the pull request.</p>
+  <ul class="prs">
+    <li>
+      <div class="proj">Zephyr RTOS <small>The Linux Foundation</small></div>
+      <div>
+        <p class="what"><a href="https://github.com/zephyrproject-rtos/zephyr/pull/106472">#106472</a> — Bluetooth controller: the Nordic link layer was handing raw microsecond values to the hardware timer. Added a tick-conversion define so <code>nrf_timer_cc_set()</code> gets ticks, removing BLE scheduling assertion failures.</p>
+        <p class="what"><a href="https://github.com/zephyrproject-rtos/zephyr/pull/106404">#106404</a> — POSIX: removed a redundant unsigned comparison in <code>pthread_attr_setstack</code> flagged by Coverity.</p>
+        <p class="what"><a href="https://github.com/zephyrproject-rtos/zephyr/pull/106403">#106403</a> — Docs: an overview of all 14 in-tree IEEE 802.15.4 radio drivers with vendor, band and bus.</p>
+      </div>
+    </li>
+    <li>
+      <div class="proj">ROS 2 Controllers <small>Open Robotics</small></div>
+      <div>
+        <p class="what">Three merged PRs in <code>diff_drive_controller</code>: removed a deprecated parameter, moved exception-based initialisation onto the ros2_control lifecycle API, fixed a runtime anti-pattern. <a href="https://github.com/ros-controls/ros2_controllers/pulls?q=is%3Apr+author%3ABhavin-umatiya">All PRs</a></p>
+      </div>
+    </li>
+    <li>
+      <div class="proj">BlackParrot RISC-V <small>Bespoke Silicon Group</small></div>
+      <div>
+        <p class="what">Brought up the full core simulation with Verilator to exercise the instruction pipeline; corrected the architecture documentation upstream. <a href="https://github.com/black-parrot/black-parrot/pulls?q=is%3Apr+author%3ABhavin-umatiya">All PRs</a></p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="timeline" class="wrap" aria-labelledby="h-tl">
+  <h2 id="h-tl">Timeline</h2>
+  <ul class="tl">
+    <li><span class="when">May – Jul 2026</span><div class="what"><b>Hardware Engineer Intern, Oizom Instruments</b><span>Ahmedabad. Hardware validation for acoustic (noise) monitoring sensors: noise-floor and dB-accuracy characterisation with FFT analysis; built Python OCR/vision automation for Room EQ Wizard calibration, cutting each test from 60 to 30 minutes; Teensy serial acquisition from Class 1 sensors; Telegram/Apps Script remote monitoring; worked with senior engineers on PCB layout for EMI/thermal.</span></div></li>
+    <li><span class="when">2026</span><div class="what"><b>AMD Slingshot — Top 4</b><span>AMD India Campus Days.</span></div></li>
+    <li><span class="when">2025</span><div class="what"><b>Smart India Hackathon — campus finalist</b><span>200+ teams; first place in the internal hardware hackathon.</span></div></li>
+    <li><span class="when">2024 – 2027</span><div class="what"><b>B.Tech, Electronics &amp; Communication (minor: Data Science)</b><span>Institute of Technology, Nirma University, Ahmedabad.</span></div></li>
+    <li><span class="when">Mar – Jun 2024</span><div class="what"><b>Intern, Vision HVAC</b></div></li>
+    <li><span class="when">2021 – 2024</span><div class="what"><b>Diploma, Information Technology</b><span>Dalia Institute of Diploma Studies (GTU), first class with distinction.</span></div></li>
+  </ul>
+</section>
+
+<section id="skills" class="wrap" aria-labelledby="h-sk">
+  <h2 id="h-sk">Skills</h2>
+  <dl class="skills">
+    <dt>RTL &amp; verification</dt><dd>Verilog, SystemVerilog, UVM 1.2, SVA, functional coverage, clock-domain crossing, STA and timing closure</dd>
+    <dt>FPGA &amp; HLS</dt><dd>Vivado, Vitis HLS, Vitis AI (DPU), AXI4 / AXI-Lite / AXI-Stream, Zynq UltraScale+ (ZCU104), Altera DE2</dd>
+    <dt>Embedded</dt><dd>C, Zephyr RTOS, STM32, ESP32, Teensy, Nordic nRF (BLE), SPI / I²C / UART, IEEE 802.15.4</dd>
+    <dt>Simulation &amp; tools</dt><dd>XSim, ModelSim / Questa, Verilator, Quartus, Python, Tcl, Bash, Git</dd>
+    <dt>Other work</dt><dd><a href="https://github.com/Bhavin-umatiya/AI-VLSI-Feasibility-Engine">AI–VLSI co-design</a>, a three-agent pipeline that turns a natural-language spec into synthesizable RTL with a lint/synthesis feedback loop. <a href="https://github.com/Bhavin-umatiya/secure-bootloader-stm32-checksum">Secure STM32 bootloader</a> with checksum-verified image boot. BAREMETALSS, a <a href="https://www.youtube.com/@BAREMETALSS">YouTube channel</a> on FPGA design and Vivado workflows. BharatPart (<a href="https://bharatpart.com">bharatpart.com</a>), a side project: parametric electronic-component search and BOM checking across Mouser, DigiKey and Indian distributors.</dd>
+    <dt>Certifications</dt><dd>Microsoft Certified: Azure AI Fundamentals · Introduction to Generative AI (Google Cloud) · Semiconductor Packaging &amp; Test (Micron)</dd>
+  </dl>
+</section>
+
+<section id="contact" class="wrap contact" aria-labelledby="h-ct">
+  <h2 id="h-ct">Contact</h2>
+  <p>If you're working on FPGA acceleration, RTL and verification, or firmware close to the hardware, I'd like to hear about it.</p>
+  <div class="row">
+    <a href="mailto:umatiyabhavin@gmail.com">umatiyabhavin@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bhavin-umatiya/">LinkedIn</a>
+    <a href="https://github.com/Bhavin-umatiya">GitHub</a>
+    <a href="https://www.youtube.com/@BAREMETALSS">YouTube</a>
+    <a href="CV.pdf">CV (PDF)</a>
+  </div>
+</section>
+</main>
+<footer class="wrap">Bhavin Umatiya · Ahmedabad, India</footer>
+</body>
 </html>
